@@ -6,7 +6,7 @@ import com.labs.reflection.injector.Injector;
 public class Main {
     public static void main(String[] args) throws Exception {
         Injector injector = new Injector();
-        injector.loadConfig("path/to/config.properties");
+        injector.loadConfig("./config.properties");
 
         SomeBean someBean = injector.inject(new SomeBean());
         someBean.foo(); // Выведет "AC"
