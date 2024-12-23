@@ -14,7 +14,7 @@ import java.util.Properties;
  */
 public class Injector {
 
-    private final Properties properties = new Properties();
+    public final Properties properties = new Properties();
 
     /**
      * Метод для загрузки конфигурационного файла свойств.
