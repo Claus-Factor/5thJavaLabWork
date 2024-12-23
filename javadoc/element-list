@@ -1,0 +1,6 @@
+com.labs.reflection
+com.labs.reflection.annotations
+com.labs.reflection.bean
+com.labs.reflection.impl
+com.labs.reflection.injector
+com.labs.reflection.interfaces

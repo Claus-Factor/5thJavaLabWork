@@ -7,18 +7,35 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Properties;
 
+/**
+ * Класс Injector предназначен для автоматического внедрения зависимостей в объекты, используя механизмы рефлексии.
+ *
+ * @author ВашИмя
+ */
 public class Injector {
 
     private final Properties properties = new Properties();
 
-    // Метод для чтения файла свойств
+    /**
+     * Метод для загрузки конфигурационного файла свойств.
+     *
+     * @param filePath Путь к файлу свойств.
+     * @throws IOException Исключение, которое может возникнуть при чтении файла.
+     */
     public void loadConfig(String filePath) throws IOException {
         try (FileInputStream fis = new FileInputStream(filePath)) {
             properties.load(fis);
         }
     }
 
-    // Параметризированный метод inject
+    /**
+     * Параметризированный метод inject, который принимает объект любого класса и выполняет внедрение зависимостей,
+     * основываясь на аннотациях {@link AutoInjectable}.
+     *
+     * @param object Объект, в который будут внедрены зависимости.
+     * @return Объект с внедренными зависимостями.
+     * @throws Exception Исключение, которое может возникнуть при работе с рефлексией.
+     */
     public <T> T inject(T object) throws Exception {
         Class<?> clazz = object.getClass();
 
